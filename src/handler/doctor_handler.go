@@ -39,3 +39,23 @@ func GetDoctorsListHandler(c *gin.Context) {
 	})
 
 }
+
+func GetDoctorSessions(c *gin.Context) {
+	doctorUUID := c.Param("doctor_uuid")
+	_ = doctorUUID // currently not used
+	var params model.DoctorSessionsParams
+
+	//validasi query params
+	if err := c.ShouldBindQuery(&params); err != nil {
+		utils.Fail(c, http.StatusBadRequest, "Invalid request params", err)
+		return
+	}
+
+	data, error := services.GetDoctorSessionsServices(c.Request.Context(), params)
+	if error != nil {
+		utils.Fail(c, http.StatusInternalServerError, "Failed to get sessions list", error)
+		return
+	}
+
+	utils.Success(c, http.StatusOK, "Sessions list retrieved successfully", data, nil)
+}

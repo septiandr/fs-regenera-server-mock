@@ -12,5 +12,6 @@ func Routes(r *gin.Engine) {
 	{
 		behaveGroup.GET("/merchants/:merchant_uuid/outlets", handler.GetOutletsListHandler)
 		behaveGroup.GET("/doctors", handler.GetDoctorsListHandler)
+		behaveGroup.GET("/doctors/:doctor_uuid/sessions", handler.GetDoctorSessions)
 	}
 }

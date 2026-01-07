@@ -117,3 +117,42 @@ func GetDoctorListServices(c context.Context, params model.DoctorListParams) ([]
 	return paged, total, nil
 
 }
+
+func GetDoctorSessionsServices(
+	ctx context.Context,
+	params model.DoctorSessionsParams,
+) ([]model.DoctorSessionResponse, error) {
+
+	filePath := "src/data/doctor_sessions.json"
+
+	bytes, err := os.ReadFile(filePath)
+	if err != nil {
+		return nil, err
+	}
+
+	var sessions []model.DoctorSessionResponse
+	if err := json.Unmarshal(bytes, &sessions); err != nil {
+		return nil, err
+	}
+
+	filtered := make([]model.DoctorSessionResponse, 0)
+
+	for _, s := range sessions {
+
+		// filter outlet_uuid
+		if params.OutletUUID != "" && s.OutletUUID != params.OutletUUID {
+			continue
+		}
+
+		// filter date
+		if params.Date != "" {
+			if s.Date == nil || *s.Date != params.Date {
+				continue
+			}
+		}
+
+		filtered = append(filtered, s)
+	}
+
+	return filtered, nil
+}

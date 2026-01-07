@@ -31,3 +31,19 @@ type DoctorListParams struct {
 	SortBy     string `form:"sort_by" binding:"omitempty,oneof=name created_at sip_number registered_at outlet age"`
 	SortType   string `form:"sort_type" binding:"omitempty,oneof=ASC DESC"`
 }
+
+type DoctorSessionsParams struct {
+	OutletUUID string `form:"outlet_uuid" binding:"omitempty,uuid"`
+	Date       string `form:"date" binding:"omitempty"`
+}
+
+type DoctorSessionResponse struct {
+	ID         int     `json:"id"`
+	Name       string  `json:"name"`
+	StartTime  string  `json:"start_time"`
+	EndTime    string  `json:"end_time"`
+	Quota      int     `json:"quota"`
+	Day        int     `json:"day"`
+	Date       *string `json:"date"` // null allowed
+	OutletUUID string  `json:"outlet_uuid"`
+}
