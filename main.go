@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fs-regenera/src/handler"
 	"fs-regenera/src/middleware"
 
 	"github.com/gin-gonic/gin"
@@ -9,18 +10,18 @@ import (
 func main() {
 	r := gin.Default()
 
+	r.Use(middleware.ApiIDMiddleware())
+
 	r.GET("/ping", func(c *gin.Context) {
 		c.JSON(200, gin.H{
 			"message": "success",
 		})
 	})
 
-	r.Use(middleware.ApiIDMiddleware())
-
 	behaveGroup := r.Group("/v1/cms")
 	{
-		behaveGroup.GET("/merchants/{merchant_uuid}/outlets", getOutletsListHandler)
+		behaveGroup.GET("/merchants/:merchant_uuid/outlets", handler.GetOutletsListHandler)
 	}
 
-	r.Run()
+	r.Run(":9070")
 }

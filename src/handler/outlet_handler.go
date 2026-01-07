@@ -10,7 +10,9 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func getOutletsListHandler(c *gin.Context) {
+func GetOutletsListHandler(c *gin.Context) {
+	merchantUUID := c.Param("merchant_uuid")
+	_ = merchantUUID // currently not used
 	var params model.OutletListParams
 
 	//validasi query params
