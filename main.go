@@ -10,6 +10,8 @@ import (
 func main() {
 	r := gin.Default()
 
+	r.Use(middleware.CORSMiddleware())
+
 	r.Use(middleware.ApiIDMiddleware())
 
 	r.GET("/ping", func(c *gin.Context) {
