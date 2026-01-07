@@ -1,6 +1,10 @@
 package main
 
-import "github.com/gin-gonic/gin"
+import (
+	"fs-regenera/src/middleware"
+
+	"github.com/gin-gonic/gin"
+)
 
 func main() {
 	r := gin.Default()
@@ -10,4 +14,13 @@ func main() {
 			"message": "success",
 		})
 	})
+
+	r.Use(middleware.ApiIDMiddleware())
+
+	behaveGroup := r.Group("/v1/cms")
+	{
+		behaveGroup.GET("/merchants/{merchant_uuid}/outlets", getOutletsListHandler)
+	}
+
+	r.Run()
 }

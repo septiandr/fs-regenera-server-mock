@@ -1,0 +1,182 @@
+[
+  {
+    "uuid": "a1f1c001-0001-4b86-86da-2bd7e4ae6a01",
+    "code": "MDS-001",
+    "name": "Matahari Beauty",
+    "address": "Jl. Bausasran No.66, Kota Yogyakarta, DIY",
+    "status": "ACTIVE",
+    "created_at": "2025-01-27T15:49:47+00:00",
+    "updated_at": "2025-01-27T15:49:47+00:00"
+  },
+  {
+    "uuid": "a1f1c001-0002-4b86-86da-2bd7e4ae6a02",
+    "code": "MDS-002",
+    "name": "Biagio Skincare",
+    "address": "Jl. Bausasran No.70, Kota Yogyakarta, DIY",
+    "status": "ACTIVE",
+    "created_at": "2025-01-27T15:49:47+00:00",
+    "updated_at": "2025-01-27T15:49:47+00:00"
+  },
+  {
+    "uuid": "a1f1c001-0003-4b86-86da-2bd7e4ae6a03",
+    "code": "MDS-003",
+    "name": "JJPS Beauty Store",
+    "address": "Jl. Bausasran No.75, Kota Yogyakarta, DIY",
+    "status": "ACTIVE",
+    "created_at": "2025-01-27T15:49:47+00:00",
+    "updated_at": "2025-01-27T15:49:47+00:00"
+  },
+  {
+    "uuid": "a1f1c001-0004-4b86-86da-2bd7e4ae6a04",
+    "code": "MDS-004",
+    "name": "Glow Sentosa",
+    "address": "Jl. Malioboro No.10, Kota Yogyakarta, DIY",
+    "status": "ACTIVE",
+    "created_at": "2025-01-27T15:49:47+00:00",
+    "updated_at": "2025-01-27T15:49:47+00:00"
+  },
+  {
+    "uuid": "a1f1c001-0005-4b86-86da-2bd7e4ae6a05",
+    "code": "MDS-005",
+    "name": "Sumber Cantik",
+    "address": "Jl. Kaliurang Km 5, Sleman, DIY",
+    "status": "ACTIVE",
+    "created_at": "2025-01-27T15:49:47+00:00",
+    "updated_at": "2025-01-27T15:49:47+00:00"
+  },
+  {
+    "uuid": "a1f1c001-0006-4b86-86da-2bd7e4ae6a06",
+    "code": "MDS-006",
+    "name": "Sejahtera Beauty",
+    "address": "Jl. Magelang No.20, Sleman, DIY",
+    "status": "ACTIVE",
+    "created_at": "2025-01-27T15:49:47+00:00",
+    "updated_at": "2025-01-27T15:49:47+00:00"
+  },
+  {
+    "uuid": "a1f1c001-0007-4b86-86da-2bd7e4ae6a07",
+    "code": "MDS-007",
+    "name": "Aura Glow Store",
+    "address": "Jl. Monjali No.18, Sleman, DIY",
+    "status": "ACTIVE",
+    "created_at": "2025-01-27T15:49:47+00:00",
+    "updated_at": "2025-01-27T15:49:47+00:00"
+  },
+  {
+    "uuid": "a1f1c001-0008-4b86-86da-2bd7e4ae6a08",
+    "code": "MDS-008",
+    "name": "Cantika House",
+    "address": "Jl. Colombo No.22, Kota Yogyakarta, DIY",
+    "status": "ACTIVE",
+    "created_at": "2025-01-27T15:49:47+00:00",
+    "updated_at": "2025-01-27T15:49:47+00:00"
+  },
+  {
+    "uuid": "a1f1c001-0009-4b86-86da-2bd7e4ae6a09",
+    "code": "MDS-009",
+    "name": "Luminous Beauty",
+    "address": "Jl. Gejayan No.30, Sleman, DIY",
+    "status": "ACTIVE",
+    "created_at": "2025-01-27T15:49:47+00:00",
+    "updated_at": "2025-01-27T15:49:47+00:00"
+  },
+  {
+    "uuid": "a1f1c001-0010-4b86-86da-2bd7e4ae6a10",
+    "code": "MDS-010",
+    "name": "Makmur Glow",
+    "address": "Jl. Godean No.15, Sleman, DIY",
+    "status": "ACTIVE",
+    "created_at": "2025-01-27T15:49:47+00:00",
+    "updated_at": "2025-01-27T15:49:47+00:00"
+  },
+  {
+    "uuid": "a1f1c001-0011-4b86-86da-2bd7e4ae6a11",
+    "code": "MDS-011",
+    "name": "Natura Skin Shop",
+    "address": "Jl. Wates No.55, Kulon Progo, DIY",
+    "status": "ACTIVE",
+    "created_at": "2025-01-27T15:49:47+00:00",
+    "updated_at": "2025-01-27T15:49:47+00:00"
+  },
+  {
+    "uuid": "a1f1c001-0012-4b86-86da-2bd7e4ae6a12",
+    "code": "MDS-012",
+    "name": "Radiant Beauty",
+    "address": "Jl. Bantul No.45, Bantul, DIY",
+    "status": "ACTIVE",
+    "created_at": "2025-01-27T15:49:47+00:00",
+    "updated_at": "2025-01-27T15:49:47+00:00"
+  },
+  {
+    "uuid": "a1f1c001-0013-4b86-86da-2bd7e4ae6a13",
+    "code": "MDS-013",
+    "name": "Velvet Skincare",
+    "address": "Jl. Imogiri Timur No.12, Bantul, DIY",
+    "status": "ACTIVE",
+    "created_at": "2025-01-27T15:49:47+00:00",
+    "updated_at": "2025-01-27T15:49:47+00:00"
+  },
+  {
+    "uuid": "a1f1c001-0014-4b86-86da-2bd7e4ae6a14",
+    "code": "MDS-014",
+    "name": "Belleza Beauty",
+    "address": "Jl. Solo No.77, Kota Yogyakarta, DIY",
+    "status": "ACTIVE",
+    "created_at": "2025-01-27T15:49:47+00:00",
+    "updated_at": "2025-01-27T15:49:47+00:00"
+  },
+  {
+    "uuid": "a1f1c001-0015-4b86-86da-2bd7e4ae6a15",
+    "code": "MDS-015",
+    "name": "Pure Glow Clinic",
+    "address": "Jl. Kusumanegara No.25, Kota Yogyakarta, DIY",
+    "status": "ACTIVE",
+    "created_at": "2025-01-27T15:49:47+00:00",
+    "updated_at": "2025-01-27T15:49:47+00:00"
+  },
+  {
+    "uuid": "a1f1c001-0016-4b86-86da-2bd7e4ae6a16",
+    "code": "MDS-016",
+    "name": "Shine Beauty Lab",
+    "address": "Jl. Parangtritis No.50, Bantul, DIY",
+    "status": "ACTIVE",
+    "created_at": "2025-01-27T15:49:47+00:00",
+    "updated_at": "2025-01-27T15:49:47+00:00"
+  },
+  {
+    "uuid": "a1f1c001-0017-4b86-86da-2bd7e4ae6a17",
+    "code": "MDS-017",
+    "name": "Elixir Skincare",
+    "address": "Jl. Palagan No.12, Sleman, DIY",
+    "status": "ACTIVE",
+    "created_at": "2025-01-27T15:49:47+00:00",
+    "updated_at": "2025-01-27T15:49:47+00:00"
+  },
+  {
+    "uuid": "a1f1c001-0018-4b86-86da-2bd7e4ae6a18",
+    "code": "MDS-018",
+    "name": "Golden Glow Store",
+    "address": "Jl. Damai No.9, Sleman, DIY",
+    "status": "ACTIVE",
+    "created_at": "2025-01-27T15:49:47+00:00",
+    "updated_at": "2025-01-27T15:49:47+00:00"
+  },
+  {
+    "uuid": "a1f1c001-0019-4b86-86da-2bd7e4ae6a19",
+    "code": "MDS-019",
+    "name": "Aurora Beauty",
+    "address": "Jl. Maguwo No.3, Sleman, DIY",
+    "status": "ACTIVE",
+    "created_at": "2025-01-27T15:49:47+00:00",
+    "updated_at": "2025-01-27T15:49:47+00:00"
+  },
+  {
+    "uuid": "a1f1c001-0020-4b86-86da-2bd7e4ae6a20",
+    "code": "MDS-020",
+    "name": "Nusantara Beauty Shop",
+    "address": "Jl. Wates No.88, Kulon Progo, DIY",
+    "status": "ACTIVE",
+    "created_at": "2025-01-27T15:49:47+00:00",
+    "updated_at": "2025-01-27T15:49:47+00:00"
+  }
+]
