@@ -1,0 +1,119 @@
+package services
+
+import (
+	"context"
+	"encoding/json"
+	"fs-regenera/src/model"
+	"os"
+	"sort"
+	"strings"
+)
+
+func getFirstOutletName(outlets []model.DoctorOutlet) string {
+	if len(outlets) == 0 {
+		return ""
+	}
+	return outlets[0].Name
+}
+
+func GetDoctorListServices(c context.Context, params model.DoctorListParams) ([]model.DoctorListResponse, int, error) {
+	filePath := "src/data/doctors.json"
+
+	bytes, err := os.ReadFile(filePath)
+	if err != nil {
+		return nil, 0, err
+	}
+
+	var doctors []model.DoctorListResponse
+	err = json.Unmarshal(bytes, &doctors)
+	if err != nil {
+		return nil, 0, err
+	}
+
+	filtered := make([]model.DoctorListResponse, 0)
+
+	for _, d := range doctors {
+
+		// filter search (by name)
+		if params.Search != "" {
+			if !strings.Contains(
+				strings.ToLower(d.Name),
+				strings.ToLower(params.Search),
+			) {
+				continue
+			}
+		}
+
+		// filter outlet_uuid
+		if params.OutletUUID != "" && d.UUID != params.OutletUUID {
+			continue
+		}
+
+		// filter type
+		if params.Type != "" && d.Type != params.Type {
+
+			continue
+		}
+
+		// filter status
+		if params.Status != "" && d.Status != params.Status {
+			continue
+		}
+
+		filtered = append(filtered, d)
+	}
+
+	total := len(filtered)
+
+	// =========================
+	// SORTING
+	// =========================
+	if params.SortBy != "" && params.SortType != "" {
+		sort.Slice(filtered, func(i, j int) bool {
+
+			var less bool
+
+			switch params.SortBy {
+			case "name":
+				less = filtered[i].Name < filtered[j].Name
+			case "created_at":
+				less = filtered[i].CreatedAt.Before(filtered[j].CreatedAt)
+			case "sip_number":
+				less = filtered[i].SIPNumber < filtered[j].SIPNumber
+			case "registered_at":
+				less = filtered[i].RegisteredAt.Before(filtered[j].RegisteredAt)
+			case "outlet":
+				less = getFirstOutletName(filtered[i].Outlets) <
+					getFirstOutletName(filtered[j].Outlets)
+			case "age":
+				less = filtered[i].Age < filtered[j].Age
+			default:
+				less = true
+			}
+
+			if params.SortType == "DESC" {
+				return !less
+			}
+			return less
+		})
+	}
+
+	// =========================
+	// PAGINATION
+	// =========================
+	start := (params.Page - 1) * params.Limit
+	end := start + params.Limit
+
+	if start >= total {
+		return []model.DoctorListResponse{}, total, nil
+	}
+
+	if end > total {
+		end = total
+	}
+
+	paged := filtered[start:end]
+
+	return paged, total, nil
+
+}

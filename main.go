@@ -1,8 +1,8 @@
 package main
 
 import (
-	"fs-regenera/src/handler"
 	"fs-regenera/src/middleware"
+	"fs-regenera/src/routes"
 
 	"github.com/gin-gonic/gin"
 )
@@ -18,10 +18,7 @@ func main() {
 		})
 	})
 
-	behaveGroup := r.Group("/v1/cms")
-	{
-		behaveGroup.GET("/merchants/:merchant_uuid/outlets", handler.GetOutletsListHandler)
-	}
+	routes.Routes(r)
 
 	r.Run(":9070")
 }
