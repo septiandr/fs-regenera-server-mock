@@ -47,3 +47,8 @@ type DoctorSessionResponse struct {
 	Date       *string `json:"date"` // null allowed
 	OutletUUID string  `json:"outlet_uuid"`
 }
+
+type DoctorBookedResponse struct {
+	DoctorSessionID int `json:"doctor_session_id"`
+	Count           int `json:"count"`
+}

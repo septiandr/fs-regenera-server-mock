@@ -59,3 +59,16 @@ func GetDoctorSessions(c *gin.Context) {
 
 	utils.Success(c, http.StatusOK, "Sessions list retrieved successfully", data, nil)
 }
+
+func GetListDoctorBookedHandler(c *gin.Context) {
+	doctorUUID := c.Param("doctor_uuid")
+	date := c.Param("date")
+
+	count, err := services.GetListDoctorBookedService(c.Request.Context(), doctorUUID, date)
+	if err != nil {
+		utils.Fail(c, http.StatusInternalServerError, "Failed to get booked count", err)
+		return
+	}
+
+	utils.Success(c, http.StatusOK, "Booked count retrieved successfully", count, nil)
+}

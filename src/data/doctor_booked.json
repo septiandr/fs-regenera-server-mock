@@ -1,0 +1,42 @@
+[
+  {
+    "doctor_session_id": 1,
+    "count": 8
+  },
+  {
+    "doctor_session_id": 2,
+    "count": 5
+  },
+  {
+    "doctor_session_id": 3,
+    "count": 12
+  },
+  {
+    "doctor_session_id": 4,
+    "count": 3
+  },
+  {
+    "doctor_session_id": 5,
+    "count": 10
+  },
+  {
+    "doctor_session_id": 6,
+    "count": 7
+  },
+  {
+    "doctor_session_id": 7,
+    "count": 15
+  },
+  {
+    "doctor_session_id": 8,
+    "count": 2
+  },
+  {
+    "doctor_session_id": 9,
+    "count": 9
+  },
+  {
+    "doctor_session_id": 10,
+    "count": 6
+  }
+]

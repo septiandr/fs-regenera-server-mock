@@ -156,3 +156,62 @@ func GetDoctorSessionsServices(
 
 	return filtered, nil
 }
+
+func GetListDoctorBookedService(
+	ctx context.Context,
+	doctorUUID string,
+	date string,
+) (int, error) {
+
+	// 1. read doctor_session.json
+	sessionBytes, err := os.ReadFile("src/data/doctor_session.json")
+	if err != nil {
+		return 0, err
+	}
+
+	var sessions []model.DoctorSessionResponse
+	if err := json.Unmarshal(sessionBytes, &sessions); err != nil {
+		return 0, err
+	}
+
+	// ambil session ID yang sesuai filter
+	sessionIDs := make(map[int]bool)
+
+	for _, s := range sessions {
+
+		// filter date (jika ada)
+		if date != "" {
+			if s.Date == nil || *s.Date != date {
+				continue
+			}
+		}
+
+		sessionIDs[s.ID] = true
+	}
+
+	// kalau tidak ada session cocok
+	if len(sessionIDs) == 0 {
+		return 0, nil
+	}
+
+	// 2. read doctor_booked.json
+	bookedBytes, err := os.ReadFile("src/data/doctor_booked.json")
+	if err != nil {
+		return 0, err
+	}
+
+	var booked []model.DoctorBookedResponse
+	if err := json.Unmarshal(bookedBytes, &booked); err != nil {
+		return 0, err
+	}
+
+	// 3. jumlahkan count
+	total := 0
+	for _, b := range booked {
+		if sessionIDs[b.DoctorSessionID] {
+			total += b.Count
+		}
+	}
+
+	return total, nil
+}
