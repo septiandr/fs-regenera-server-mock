@@ -11,6 +11,7 @@ func Routes(r *gin.Engine) {
 	behaveGroup := r.Group("/api/v1/cms")
 	{
 		behaveGroup.POST("/login", handler.LoginHandler)
+		behaveGroup.GET("/profile", handler.ProfileHandler)
 		behaveGroup.GET("/merchants/:merchant_uuid/outlets", handler.GetOutletsListHandler)
 		behaveGroup.GET("/doctors", handler.GetDoctorsListHandler)
 		behaveGroup.GET("/doctors/:doctor_uuid/sessions", handler.GetDoctorSessions)
