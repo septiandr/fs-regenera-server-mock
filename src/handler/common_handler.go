@@ -18,6 +18,6 @@ func ProfileHandler(c *gin.Context) {
 		"updated_at": "2025-12-18T02:02:51.367231Z",
 	}
 
-	utils.Success(c, 200, "Profile fetched successfully", nil, res)
+	utils.Success(c, 200, "Profile fetched successfully", res, nil)
 
 }
