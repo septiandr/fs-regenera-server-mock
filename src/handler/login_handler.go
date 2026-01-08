@@ -15,13 +15,11 @@ func LoginHandler(c *gin.Context) {
 		return
 	}
 
-	token, err := services.LoginService(c.Request.Context(), req)
+	user, err := services.LoginService(c.Request.Context(), req)
 	if err != nil {
 		utils.Fail(c, 401, "Email or password incorrect", err)
 		return
 	}
 
-	utils.Success(c, 200, "Login successful", map[string]string{
-		"access_token": token,
-	}, nil)
+	utils.Success(c, 200, "Login successful", user, nil)
 }

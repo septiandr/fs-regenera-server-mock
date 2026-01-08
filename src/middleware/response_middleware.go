@@ -12,8 +12,8 @@ type SuccessResponse struct {
 	ApiID   string      `json:"api_id"`
 	Status  string      `json:"status"`
 	Message string      `json:"message"`
-	Data    interface{} `json:"data,omitempty"`
-	Meta    interface{} `json:"meta,omitempty"`
+	Data    interface{} `json:"data"`
+	Meta    interface{} `json:"meta"`
 }
 
 type ErrorResponse struct {

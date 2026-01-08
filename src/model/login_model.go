@@ -6,5 +6,12 @@ type LoginRequest struct {
 }
 
 type LoginResponse struct {
-	Token string `json:"token"`
+	UUID         string   `json:"uuid"`
+	Name         string   `json:"name"`
+	Email        string   `json:"email"`
+	IsSuperAdmin bool     `json:"is_super_admin"`
+	RoleID       *int     `json:"role_id"`
+	RoleName     *string  `json:"role_name"`
+	Token        string   `json:"token"`
+	Features     []string `json:"features"`
 }
