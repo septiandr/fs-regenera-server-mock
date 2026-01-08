@@ -13,7 +13,7 @@ func Routes(r *gin.Engine) {
 
 	// ================= AUTH =================
 	api.POST("/login", handler.LoginHandler)
-	api.GET("/profile", handler.ProfileHandler)
+	api.GET("/profiles", handler.ProfileHandler)
 
 	// ================= MERCHANT =================
 	api.GET("/merchants", handler.GetMerchantsListHanlder)
