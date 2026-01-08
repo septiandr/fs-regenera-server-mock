@@ -13,6 +13,7 @@ func Routes(r *gin.Engine) {
 		behaveGroup.POST("/login", handler.LoginHandler)
 		behaveGroup.GET("/profile", handler.ProfileHandler)
 		behaveGroup.GET("/merchants/:merchant_uuid/outlets", handler.GetOutletsListHandler)
+		behaveGroup.GET("/merchants", handler.GetMerchantsListHanlder)
 		behaveGroup.GET("/doctors", handler.GetDoctorsListHandler)
 		behaveGroup.GET("/doctors/:doctor_uuid/sessions", handler.GetDoctorSessions)
 		behaveGroup.GET("/bookings/:doctor_uuid/booked/:date/count", handler.GetListDoctorBookedHandler)

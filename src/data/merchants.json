@@ -1,0 +1,242 @@
+[
+  {
+    "code": "MRCHN-001",
+    "created_at": "2025-01-01T08:00:00Z",
+    "description": "Merchant pertama",
+    "is_provider": true,
+    "is_redemption": true,
+    "merchant_category": {
+      "id": 1,
+      "name": "MyMerchantCategory"
+    },
+    "name": "Merchant Number 1",
+    "priority_number": 1,
+    "status": "ACTIVE",
+    "updated_at": "2025-12-22T07:31:12.1953Z",
+    "uuid": "9ec7f91f-f9db-4e01-9910-b4adb17845a2"
+  },
+  {
+    "code": "MRCHN-002",
+    "created_at": "2025-01-02T08:00:00Z",
+    "description": "Merchant kedua",
+    "is_provider": true,
+    "is_redemption": false,
+    "merchant_category": {
+      "id": 1,
+      "name": "MyMerchantCategory"
+    },
+    "name": "Merchant Number 2",
+    "priority_number": 2,
+    "status": "ACTIVE",
+    "updated_at": "2025-12-22T07:31:12.1953Z",
+    "uuid": "1a2b3c4d-f9db-4e01-9910-b4adb1784502"
+  },
+  {
+    "code": "MRCHN-003",
+    "created_at": "2025-01-03T08:00:00Z",
+    "description": "Merchant ketiga",
+    "is_provider": false,
+    "is_redemption": true,
+    "merchant_category": {
+      "id": 2,
+      "name": "Food & Beverage"
+    },
+    "name": "Merchant Number 3",
+    "priority_number": 3,
+    "status": "ACTIVE",
+    "updated_at": "2025-12-22T07:31:12.1953Z",
+    "uuid": "1a2b3c4d-f9db-4e01-9910-b4adb1784503"
+  },
+  {
+    "code": "MRCHN-004",
+    "created_at": "2025-01-04T08:00:00Z",
+    "description": "Merchant keempat",
+    "is_provider": true,
+    "is_redemption": true,
+    "merchant_category": {
+      "id": 2,
+      "name": "Food & Beverage"
+    },
+    "name": "Merchant Number 4",
+    "priority_number": 4,
+    "status": "INACTIVE",
+    "updated_at": "2025-12-22T07:31:12.1953Z",
+    "uuid": "1a2b3c4d-f9db-4e01-9910-b4adb1784504"
+  },
+  {
+    "code": "MRCHN-005",
+    "created_at": "2025-01-05T08:00:00Z",
+    "description": "Merchant kelima",
+    "is_provider": false,
+    "is_redemption": false,
+    "merchant_category": {
+      "id": 3,
+      "name": "Retail"
+    },
+    "name": "Merchant Number 5",
+    "priority_number": 5,
+    "status": "ACTIVE",
+    "updated_at": "2025-12-22T07:31:12.1953Z",
+    "uuid": "1a2b3c4d-f9db-4e01-9910-b4adb1784505"
+  },
+  {
+    "code": "MRCHN-006",
+    "created_at": "2025-01-06T08:00:00Z",
+    "description": "Merchant keenam",
+    "is_provider": true,
+    "is_redemption": true,
+    "merchant_category": {
+      "id": 3,
+      "name": "Retail"
+    },
+    "name": "Merchant Number 6",
+    "priority_number": 6,
+    "status": "ACTIVE",
+    "updated_at": "2025-12-22T07:31:12.1953Z",
+    "uuid": "1a2b3c4d-f9db-4e01-9910-b4adb1784506"
+  },
+  {
+    "code": "MRCHN-007",
+    "created_at": "2025-01-07T08:00:00Z",
+    "description": "Merchant ketujuh",
+    "is_provider": false,
+    "is_redemption": true,
+    "merchant_category": {
+      "id": 4,
+      "name": "Travel"
+    },
+    "name": "Merchant Number 7",
+    "priority_number": 7,
+    "status": "ACTIVE",
+    "updated_at": "2025-12-22T07:31:12.1953Z",
+    "uuid": "1a2b3c4d-f9db-4e01-9910-b4adb1784507"
+  },
+  {
+    "code": "MRCHN-008",
+    "created_at": "2025-01-08T08:00:00Z",
+    "description": "Merchant kedelapan",
+    "is_provider": true,
+    "is_redemption": false,
+    "merchant_category": {
+      "id": 4,
+      "name": "Travel"
+    },
+    "name": "Merchant Number 8",
+    "priority_number": 8,
+    "status": "ACTIVE",
+    "updated_at": "2025-12-22T07:31:12.1953Z",
+    "uuid": "1a2b3c4d-f9db-4e01-9910-b4adb1784508"
+  },
+  {
+    "code": "MRCHN-009",
+    "created_at": "2025-01-09T08:00:00Z",
+    "description": "Merchant kesembilan",
+    "is_provider": true,
+    "is_redemption": true,
+    "merchant_category": {
+      "id": 5,
+      "name": "Entertainment"
+    },
+    "name": "Merchant Number 9",
+    "priority_number": 9,
+    "status": "ACTIVE",
+    "updated_at": "2025-12-22T07:31:12.1953Z",
+    "uuid": "1a2b3c4d-f9db-4e01-9910-b4adb1784509"
+  },
+  {
+    "code": "MRCHN-010",
+    "created_at": "2025-01-10T08:00:00Z",
+    "description": "Merchant kesepuluh",
+    "is_provider": false,
+    "is_redemption": false,
+    "merchant_category": {
+      "id": 5,
+      "name": "Entertainment"
+    },
+    "name": "Merchant Number 10",
+    "priority_number": 10,
+    "status": "INACTIVE",
+    "updated_at": "2025-12-22T07:31:12.1953Z",
+    "uuid": "1a2b3c4d-f9db-4e01-9910-b4adb1784510"
+  },
+  {
+    "code": "MRCHN-011",
+    "created_at": "2025-01-11T08:00:00Z",
+    "description": "Merchant kesebelas",
+    "is_provider": true,
+    "is_redemption": true,
+    "merchant_category": {
+      "id": 1,
+      "name": "MyMerchantCategory"
+    },
+    "name": "Merchant Number 11",
+    "priority_number": 11,
+    "status": "ACTIVE",
+    "updated_at": "2025-12-22T07:31:12.1953Z",
+    "uuid": "1a2b3c4d-f9db-4e01-9910-b4adb1784511"
+  },
+  {
+    "code": "MRCHN-012",
+    "created_at": "2025-01-12T08:00:00Z",
+    "description": "Merchant keduabelas",
+    "is_provider": true,
+    "is_redemption": false,
+    "merchant_category": {
+      "id": 2,
+      "name": "Food & Beverage"
+    },
+    "name": "Merchant Number 12",
+    "priority_number": 12,
+    "status": "ACTIVE",
+    "updated_at": "2025-12-22T07:31:12.1953Z",
+    "uuid": "1a2b3c4d-f9db-4e01-9910-b4adb1784512"
+  },
+  {
+    "code": "MRCHN-013",
+    "created_at": "2025-01-13T08:00:00Z",
+    "description": "Merchant ketigabelas",
+    "is_provider": false,
+    "is_redemption": true,
+    "merchant_category": {
+      "id": 3,
+      "name": "Retail"
+    },
+    "name": "Merchant Number 13",
+    "priority_number": 13,
+    "status": "ACTIVE",
+    "updated_at": "2025-12-22T07:31:12.1953Z",
+    "uuid": "1a2b3c4d-f9db-4e01-9910-b4adb1784513"
+  },
+  {
+    "code": "MRCHN-014",
+    "created_at": "2025-01-14T08:00:00Z",
+    "description": "Merchant keempatbelas",
+    "is_provider": true,
+    "is_redemption": true,
+    "merchant_category": {
+      "id": 4,
+      "name": "Travel"
+    },
+    "name": "Merchant Number 14",
+    "priority_number": 14,
+    "status": "ACTIVE",
+    "updated_at": "2025-12-22T07:31:12.1953Z",
+    "uuid": "1a2b3c4d-f9db-4e01-9910-b4adb1784514"
+  },
+  {
+    "code": "MRCHN-015",
+    "created_at": "2025-01-15T08:00:00Z",
+    "description": "Merchant kelimabelas",
+    "is_provider": false,
+    "is_redemption": false,
+    "merchant_category": {
+      "id": 5,
+      "name": "Entertainment"
+    },
+    "name": "Merchant Number 15",
+    "priority_number": 15,
+    "status": "ACTIVE",
+    "updated_at": "2025-12-22T07:31:12.1953Z",
+    "uuid": "1a2b3c4d-f9db-4e01-9910-b4adb1784515"
+  }
+]
