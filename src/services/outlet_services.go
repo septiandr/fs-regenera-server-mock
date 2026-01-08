@@ -10,7 +10,6 @@ import (
 )
 
 func GetOutletListServices(ctx context.Context, params model.OutletListParams) ([]model.OutletResponse, int, error) {
-	//dummy data
 	filePath := "src/data/outlets.json"
 
 	bytes, err := os.ReadFile(filePath)

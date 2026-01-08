@@ -45,8 +45,17 @@ func GetDoctorListServices(c context.Context, params model.DoctorListParams) ([]
 		}
 
 		// filter outlet_uuid
-		if params.OutletUUID != "" && d.UUID != params.OutletUUID {
-			continue
+		if params.OutletUUID != "" {
+			found := false
+			for _, o := range d.Outlets {
+				if o.UUID == params.OutletUUID {
+					found = true
+					break
+				}
+			}
+			if !found {
+				continue
+			}
 		}
 
 		// filter type
