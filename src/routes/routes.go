@@ -22,5 +22,5 @@ func Routes(r *gin.Engine) {
 	// ================= DOCTOR =================
 	api.GET("/doctors", handler.GetDoctorsListHandler)
 	api.GET("/doctors/:doctor_uuid/sessions", handler.GetDoctorSessions)
-	api.GET("/doctors/:doctor_uuid/booked/:date/count", handler.GetListDoctorBookedHandler)
+	api.GET("/bookings/:doctor_uuid/booked/:date/count", handler.GetListDoctorBookedHandler)
 }
