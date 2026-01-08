@@ -5,44 +5,59 @@ const imageName = "fs-regenera-app";
 const containerName = "fs-regenera-service";
 const portMapping = "9070:9070";
 
-try {
-  console.log("Mengecek status Podman machine...");
+function run(cmd) {
+  console.log(`\n$ ${cmd}`);
+  execSync(cmd, { stdio: "inherit" });
+}
 
-  let status = "";
+function exec(cmd) {
+  return execSync(cmd, { stdio: "pipe" }).toString().trim();
+}
+
+function exists(cmd) {
   try {
-    // inspect machine, jika field Status ada ambil
-    const out = execSync(
-      `podman machine inspect ${machineName} --format '{{.Status}}'`
-    )
-      .toString()
-      .trim();
-    status = out || "Stopped"; // jika kosong, anggap stopped
+    execSync(cmd, { stdio: "ignore" });
+    return true;
   } catch {
-    console.log(
-      `Podman machine "${machineName}" sudah ada tapi gagal inspect. Lanjut tanpa init...`
-    );
-    status = "Stopped"; // jangan init lagi
+    return false;
+  }
+}
+
+try {
+  console.log("🔍 Cek Podman machine...");
+
+  if (!exists(`podman machine inspect ${machineName}`)) {
+    throw new Error(`Podman machine "${machineName}" belum ada`);
   }
 
-  if (status !== "Running") {
-    console.log("Menjalankan Podman machine...");
-    execSync(`podman machine start ${machineName}`, { stdio: "inherit" });
+  const inspectRaw = exec(`podman machine inspect ${machineName}`);
+  const inspect = JSON.parse(inspectRaw)[0];
+
+  const isRunning = inspect.State === "running" || inspect.Running === true;
+
+  if (!isRunning) {
+    console.log("▶️ Menjalankan Podman machine...");
+    run(`podman machine start ${machineName}`);
   } else {
-    console.log("Podman machine sudah berjalan.");
+    console.log("✅ Podman machine sudah running");
   }
 
-  // Build image
-  console.log("Membangun image Podman...");
-  execSync(`podman build -t ${imageName} .`, { stdio: "inherit" });
+  console.log("🔁 Build image...");
+  run(`podman build -t ${imageName} .`);
 
-  // Jalankan container
-  console.log("Menjalankan container Podman...");
-  execSync(
-    `podman run -d -p ${portMapping} --name ${containerName} ${imageName}`,
-    { stdio: "inherit" }
-  );
+  console.log("🧹 Stop & hapus container lama (jika ada)...");
+  if (exists(`podman container exists ${containerName}`)) {
+    run(`podman stop ${containerName}`);
+    run(`podman rm ${containerName}`);
+  } else {
+    console.log("ℹ️ Container belum ada, skip");
+  }
 
-  console.log("Container berhasil dijalankan.");
+  console.log("🚀 Menjalankan container...");
+  run(`podman run -d -p ${portMapping} --name ${containerName} ${imageName}`);
+
+  console.log("\n✅ Build & run berhasil!");
 } catch (err) {
-  console.error("Terjadi error:", err.message);
+  console.error("\n❌ Error:", err.message);
+  process.exit(1);
 }
