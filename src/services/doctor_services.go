@@ -173,7 +173,7 @@ func GetListDoctorBookedService(
 ) ([]model.DoctorBookedResponse, error) {
 
 	// 1. read sessions
-	sessionBytes, err := os.ReadFile(filepath.Join("src", "data", "doctor_session.json"))
+	sessionBytes, err := os.ReadFile(filepath.Join("src", "data", "doctor_sessions.json"))
 	if err != nil {
 		return nil, err
 	}
