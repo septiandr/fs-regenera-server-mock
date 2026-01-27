@@ -107,7 +107,7 @@
     "profile_photo": "https://storage.googleapis.com/assets/avatar6.jpg",
     "sip_number": "440/078-5/Sp.BP/00912/DPMPTSP/2023",
     "registered_at": "2025-09-06T10:20:00Z",
-    "type": "PARTNER",
+    "type": "GUEST",
     "outlets": [
       {
         "uuid": "a1f1c001-0015-4b86-86da-2bd7e4ae6a15",
@@ -147,11 +147,11 @@
     "profile_photo": "https://storage.googleapis.com/assets/avatar8.jpg",
     "sip_number": "440/045-2/AD/00555/DPMPTSP/2023",
     "registered_at": "2025-09-08T14:30:00Z",
-    "type": "VISITING",
+    "type": "GUEST",
     "outlets": [
       {
-        "uuid": "a1f1c001-0018-4b86-86da-2bd7e4ae6a18",
-        "name": "Golden Glow Store"
+        "uuid": "a1f1c001-0001-4b86-86da-2bd7e4ae6a01",
+        "name": "Matahari Beauty"
       },
       {
         "uuid": "a1f1c001-0019-4b86-86da-2bd7e4ae6a19",
@@ -223,7 +223,7 @@
     "profile_photo": "https://storage.googleapis.com/assets/avatar12.jpg",
     "sip_number": "440/088-1/Sp.BP/01001/DPMPTSP/2024",
     "registered_at": "2025-09-12T09:25:00Z",
-    "type": "PARTNER",
+    "type": "GUEST",
     "outlets": [
       {
         "uuid": "a1f1c001-0016-4b86-86da-2bd7e4ae6a16",
@@ -263,7 +263,7 @@
     "profile_photo": "https://storage.googleapis.com/assets/avatar14.jpg",
     "sip_number": "440/041-3/AD/00512/DPMPTSP/2023",
     "registered_at": "2025-09-14T15:00:00Z",
-    "type": "VISITING",
+    "type": "GUEST",
     "outlets": [
       {
         "uuid": "a1f1c001-0017-4b86-86da-2bd7e4ae6a17",
