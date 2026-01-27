@@ -1,0 +1,303 @@
+[
+  {
+    "uuid": "a8777e51-542f-4145-a588-9e2beb8f990c",
+    "phone_code": "+62",
+    "phone": "8214566883",
+    "name": "Arul Gading",
+    "legacy_no_customer": "NTSH-00001",
+    "gender": "FEMALE",
+    "birth_date": "1995-03-12",
+    "registration_outlet_uuid": "a7295cd9-552a-4975-b405-5971612595c8",
+    "registration_outlet": {
+      "uuid": "a7295cd9-552a-4975-b405-5971612595c8",
+      "name": "OUTLET PUSAT",
+      "code": "ONTSH01"
+    }
+  },
+  {
+    "uuid": "a8777e51-542f-4145-a588-9e2b87987977c",
+    "phone_code": "+62",
+    "phone": "8123188855",
+    "name": "Arul Gadong",
+    "legacy_no_customer": "NTSH-00002",
+    "gender": "MALE",
+    "birth_date": "1992-07-21",
+    "registration_outlet_uuid": "a7295cd9-552a-4975-b405-5971612595c8",
+    "registration_outlet": {
+      "uuid": "a7295cd9-552a-4975-b405-5971612595c8",
+      "name": "OUTLET PUSAT",
+      "code": "ONTSH01"
+    }
+  },
+  {
+    "uuid": "cust-00003",
+    "phone_code": "+62",
+    "phone": "8134567890",
+    "name": "Sinta Maharani",
+    "legacy_no_customer": "NTSH-00003",
+    "gender": "FEMALE",
+    "birth_date": "1998-01-05",
+    "registration_outlet_uuid": "a7295cd9-552a-4975-b405-5971612595c8",
+    "registration_outlet": {
+      "uuid": "a7295cd9-552a-4975-b405-5971612595c8",
+      "name": "OUTLET PUSAT",
+      "code": "ONTSH01"
+    }
+  },
+  {
+    "uuid": "cust-00004",
+    "phone_code": "+62",
+    "phone": "8147788990",
+    "name": "Bima Pratama",
+    "legacy_no_customer": "NTSH-00004",
+    "gender": "MALE",
+    "birth_date": "1990-11-18",
+    "registration_outlet_uuid": "a7295cd9-552a-4975-b405-5971612595c8",
+    "registration_outlet": {
+      "uuid": "a7295cd9-552a-4975-b405-5971612595c8",
+      "name": "OUTLET PUSAT",
+      "code": "ONTSH01"
+    }
+  },
+  {
+    "uuid": "cust-00005",
+    "phone_code": "+62",
+    "phone": "8159988776",
+    "name": "Nabila Putri",
+    "legacy_no_customer": "NTSH-00005",
+    "gender": "FEMALE",
+    "birth_date": "2000-06-09",
+    "registration_outlet_uuid": "a7295cd9-552a-4975-b405-5971612595c8",
+    "registration_outlet": {
+      "uuid": "a7295cd9-552a-4975-b405-5971612595c8",
+      "name": "OUTLET PUSAT",
+      "code": "ONTSH01"
+    }
+  },
+  {
+    "uuid": "cust-00006",
+    "phone_code": "+62",
+    "phone": "8163344556",
+    "name": "Rizky Ananda",
+    "legacy_no_customer": "NTSH-00006",
+    "gender": "MALE",
+    "birth_date": "1996-09-30",
+    "registration_outlet_uuid": "a7295cd9-552a-4975-b405-5971612595c8",
+    "registration_outlet": {
+      "uuid": "a7295cd9-552a-4975-b405-5971612595c8",
+      "name": "OUTLET PUSAT",
+      "code": "ONTSH01"
+    }
+  },
+  {
+    "uuid": "cust-00007",
+    "phone_code": "+62",
+    "phone": "8174455667",
+    "name": "Ayu Lestari",
+    "legacy_no_customer": "NTSH-00007",
+    "gender": "FEMALE",
+    "birth_date": "1994-12-02",
+    "registration_outlet_uuid": "a7295cd9-552a-4975-b405-5971612595c8",
+    "registration_outlet": {
+      "uuid": "a7295cd9-552a-4975-b405-5971612595c8",
+      "name": "OUTLET PUSAT",
+      "code": "ONTSH01"
+    }
+  },
+  {
+    "uuid": "cust-00008",
+    "phone_code": "+62",
+    "phone": "8185566778",
+    "name": "Fajar Nugroho",
+    "legacy_no_customer": "NTSH-00008",
+    "gender": "MALE",
+    "birth_date": "1989-04-14",
+    "registration_outlet_uuid": "a7295cd9-552a-4975-b405-5971612595c8",
+    "registration_outlet": {
+      "uuid": "a7295cd9-552a-4975-b405-5971612595c8",
+      "name": "OUTLET PUSAT",
+      "code": "ONTSH01"
+    }
+  },
+  {
+    "uuid": "cust-00009",
+    "phone_code": "+62",
+    "phone": "8196677889",
+    "name": "Wulan Sari",
+    "legacy_no_customer": "NTSH-00009",
+    "gender": "FEMALE",
+    "birth_date": "1997-08-27",
+    "registration_outlet_uuid": "a7295cd9-552a-4975-b405-5971612595c8",
+    "registration_outlet": {
+      "uuid": "a7295cd9-552a-4975-b405-5971612595c8",
+      "name": "OUTLET PUSAT",
+      "code": "ONTSH01"
+    }
+  },
+  {
+    "uuid": "cust-00010",
+    "phone_code": "+62",
+    "phone": "8211112233",
+    "name": "Dimas Saputra",
+    "legacy_no_customer": "NTSH-00010",
+    "gender": "MALE",
+    "birth_date": "1993-02-10",
+    "registration_outlet_uuid": "a7295cd9-552a-4975-b405-5971612595c8",
+    "registration_outlet": {
+      "uuid": "a7295cd9-552a-4975-b405-5971612595c8",
+      "name": "OUTLET PUSAT",
+      "code": "ONTSH01"
+    }
+  },
+
+  {
+    "uuid": "cust-00011",
+    "phone_code": "+62",
+    "phone": "8223344556",
+    "name": "Maya Kartika",
+    "legacy_no_customer": "NTSH-00011",
+    "gender": "FEMALE",
+    "birth_date": "1999-10-01",
+    "registration_outlet_uuid": "a7295cd9-552a-4975-b405-5971612595c8",
+    "registration_outlet": {
+      "uuid": "a7295cd9-552a-4975-b405-5971612595c8",
+      "name": "OUTLET PUSAT",
+      "code": "ONTSH01"
+    }
+  },
+  {
+    "uuid": "cust-00012",
+    "phone_code": "+62",
+    "phone": "8234455667",
+    "name": "Andi Wijaya",
+    "legacy_no_customer": "NTSH-00012",
+    "gender": "MALE",
+    "birth_date": "1988-05-19",
+    "registration_outlet_uuid": "a7295cd9-552a-4975-b405-5971612595c8",
+    "registration_outlet": {
+      "uuid": "a7295cd9-552a-4975-b405-5971612595c8",
+      "name": "OUTLET PUSAT",
+      "code": "ONTSH01"
+    }
+  },
+  {
+    "uuid": "cust-00013",
+    "phone_code": "+62",
+    "phone": "8245566778",
+    "name": "Intan Permata",
+    "legacy_no_customer": "NTSH-00013",
+    "gender": "FEMALE",
+    "birth_date": "2001-12-25",
+    "registration_outlet_uuid": "a7295cd9-552a-4975-b405-5971612595c8",
+    "registration_outlet": {
+      "uuid": "a7295cd9-552a-4975-b405-5971612595c8",
+      "name": "OUTLET PUSAT",
+      "code": "ONTSH01"
+    }
+  },
+  {
+    "uuid": "cust-00014",
+    "phone_code": "+62",
+    "phone": "8256677889",
+    "name": "Rendi Kurniawan",
+    "legacy_no_customer": "NTSH-00014",
+    "gender": "MALE",
+    "birth_date": "1991-06-03",
+    "registration_outlet_uuid": "a7295cd9-552a-4975-b405-5971612595c8",
+    "registration_outlet": {
+      "uuid": "a7295cd9-552a-4975-b405-5971612595c8",
+      "name": "OUTLET PUSAT",
+      "code": "ONTSH01"
+    }
+  },
+  {
+    "uuid": "cust-00015",
+    "phone_code": "+62",
+    "phone": "8267788990",
+    "name": "Citra Dewi",
+    "legacy_no_customer": "NTSH-00015",
+    "gender": "FEMALE",
+    "birth_date": "1996-04-08",
+    "registration_outlet_uuid": "a7295cd9-552a-4975-b405-5971612595c8",
+    "registration_outlet": {
+      "uuid": "a7295cd9-552a-4975-b405-5971612595c8",
+      "name": "OUTLET PUSAT",
+      "code": "ONTSH01"
+    }
+  },
+  {
+    "uuid": "cust-00016",
+    "phone_code": "+62",
+    "phone": "8278899001",
+    "name": "Yoga Prabowo",
+    "legacy_no_customer": "NTSH-00016",
+    "gender": "MALE",
+    "birth_date": "1987-09-11",
+    "registration_outlet_uuid": "a7295cd9-552a-4975-b405-5971612595c8",
+    "registration_outlet": {
+      "uuid": "a7295cd9-552a-4975-b405-5971612595c8",
+      "name": "OUTLET PUSAT",
+      "code": "ONTSH01"
+    }
+  },
+  {
+    "uuid": "cust-00017",
+    "phone_code": "+62",
+    "phone": "8289900112",
+    "name": "Dewi Anggraini",
+    "legacy_no_customer": "NTSH-00017",
+    "gender": "FEMALE",
+    "birth_date": "1993-01-29",
+    "registration_outlet_uuid": "a7295cd9-552a-4975-b405-5971612595c8",
+    "registration_outlet": {
+      "uuid": "a7295cd9-552a-4975-b405-5971612595c8",
+      "name": "OUTLET PUSAT",
+      "code": "ONTSH01"
+    }
+  },
+  {
+    "uuid": "cust-00018",
+    "phone_code": "+62",
+    "phone": "8290011223",
+    "name": "Hendra Sapto",
+    "legacy_no_customer": "NTSH-00018",
+    "gender": "MALE",
+    "birth_date": "1985-08-16",
+    "registration_outlet_uuid": "a7295cd9-552a-4975-b405-5971612595c8",
+    "registration_outlet": {
+      "uuid": "a7295cd9-552a-4975-b405-5971612595c8",
+      "name": "OUTLET PUSAT",
+      "code": "ONTSH01"
+    }
+  },
+  {
+    "uuid": "cust-00019",
+    "phone_code": "+62",
+    "phone": "8212233445",
+    "name": "Melati Puspita",
+    "legacy_no_customer": "NTSH-00019",
+    "gender": "FEMALE",
+    "birth_date": "1997-11-07",
+    "registration_outlet_uuid": "a7295cd9-552a-4975-b405-5971612595c8",
+    "registration_outlet": {
+      "uuid": "a7295cd9-552a-4975-b405-5971612595c8",
+      "name": "OUTLET PUSAT",
+      "code": "ONTSH01"
+    }
+  },
+  {
+    "uuid": "cust-00020",
+    "phone_code": "+62",
+    "phone": "8223344667",
+    "name": "Bagas Wicaksono",
+    "legacy_no_customer": "NTSH-00020",
+    "gender": "MALE",
+    "birth_date": "1990-02-22",
+    "registration_outlet_uuid": "a7295cd9-552a-4975-b405-5971612595c8",
+    "registration_outlet": {
+      "uuid": "a7295cd9-552a-4975-b405-5971612595c8",
+      "name": "OUTLET PUSAT",
+      "code": "ONTSH01"
+    }
+  }
+]
