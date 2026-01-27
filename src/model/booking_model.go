@@ -52,3 +52,15 @@ type Booking struct {
 type BookingDetailQueryParams struct {
 	BookingUUID string `form:"booking_uuid" json:"booking_uuid"`
 }
+
+type BookingListLog struct {
+	ID           int    `json:"id"`
+	BookingUUID  string `json:"booking_uuid"`
+	Type         string `json:"type"`
+	Description  string `json:"description"`
+	ActionByType string `json:"action_by_type"`
+	ActionByUUID string `json:"action_by_uuid"`
+	ActionByName string `json:"action_by_name"`
+	CreatedAt    string `json:"created_at"`
+	UpdatedAt    string `json:"updated_at"`
+}

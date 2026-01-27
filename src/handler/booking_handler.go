@@ -86,6 +86,49 @@ func GetListBookingHandler(c *gin.Context) {
 
 }
 
+func GetBookingListLogHandler(c *gin.Context) {
+	var query model.BookingDetailQueryParams
+
+	if err := c.ShouldBindQuery(&query); err != nil {
+		utils.Fail(
+			c,
+			http.StatusBadRequest,
+			"Invalid query params",
+			err,
+		)
+		return
+	}
+
+	// minimal validation
+	if query.BookingUUID == "" {
+		utils.Fail(
+			c,
+			http.StatusBadRequest,
+			"uuid or code is required",
+			nil,
+		)
+		return
+	}
+
+	data, err := services.GetListLogBookingService()
+	if err != nil {
+		utils.Fail(
+			c,
+			http.StatusNotFound,
+			"Booking not found",
+			err,
+		)
+		return
+	}
+
+	utils.Success(
+		c,
+		http.StatusOK,
+		"Success validate data",
+		data,
+		nil,
+	)
+}
 func GetDetailBookingHandler(c *gin.Context) {
 	var query model.BookingDetailQueryParams
 
@@ -110,7 +153,7 @@ func GetDetailBookingHandler(c *gin.Context) {
 		return
 	}
 
-	data, err := services.GetDetailBookingService(query)
+	data, err := services.GetDetailBookingService()
 	if err != nil {
 		utils.Fail(
 			c,

@@ -29,4 +29,5 @@ func Routes(r *gin.Engine) {
 	api.GET("/bookings/summaries", handler.CreateBookingHandler)
 	api.GET("/bookings", handler.GetListBookingHandler)
 	api.GET("/bookings/:booking_uuid", handler.GetListBookingHandler)
+	api.GET("/bookings/:booking_uuid/logs", handler.GetBookingListLogHandler)
 }

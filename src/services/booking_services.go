@@ -99,7 +99,7 @@ func GetListBookingService(query model.BookingListQuery) (
 	return result, total, nil
 }
 
-func GetDetailBookingService(query model.BookingDetailQueryParams) (
+func GetDetailBookingService() (
 	model.Booking,
 	error,
 ) {
@@ -113,12 +113,30 @@ func GetDetailBookingService(query model.BookingDetailQueryParams) (
 		return model.Booking{}, err
 	}
 
-	for _, b := range bookings {
-		if query.BookingUUID != "" && b.UUID == query.BookingUUID {
-			return b, nil
-		}
+	// for _, b := range bookings {
+	// 	if query.BookingUUID != "" && b.UUID == query.BookingUUID {
+	// 		return b, nil
+	// 	}
 
-	}
+	// }
 
 	return model.Booking{}, errors.New("booking not found")
+}
+
+func GetListLogBookingService() (
+	model.BookingListLog,
+	error,
+) {
+	file, err := os.ReadFile("src/data/bookings_log.json")
+	if err != nil {
+		return model.BookingListLog{}, err
+	}
+
+	var bookings []model.Booking
+	if err := json.Unmarshal(file, &bookings); err != nil {
+		return model.BookingListLog{}, err
+	}
+
+	return model.BookingListLog{}, errors.New("booking not found")
+
 }
