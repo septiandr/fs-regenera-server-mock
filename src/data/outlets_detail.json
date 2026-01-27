@@ -1,0 +1,27 @@
+{
+  "uuid": "a16eab60-fec3-43b7-adb0-e6d3d60443c9",
+  "code": "MAX0011A",
+  "name": "Max Coffee Bausasran",
+  "status": "ACTIVE",
+  "address": "Jl. Bausasran No.66, Gunungketur, Pakualaman, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55111",
+  "latitude": -7.7973051,
+  "longitude": 110.3745346,
+  "pic_name": "Mas Kadek",
+  "pic_phone_number": "628123456789",
+  "pic_email": "maxcoffee@gmail.com",
+  "timezone": "Asia/Jakarta",
+  "opening_start": "10:00",
+  "opening_end": "23:59",
+  "merchant": {
+    "uuid": "hjgsb60-fec3-43b7-adb0-e6d3d60443c6",
+    "code": "MAX0011",
+    "name": "Maxx Coffee"
+  },
+  "outlet_pricing_group": {
+    "uuid": "fhjgs60-fec3-43b7-adb0-fgjwgd60443c6",
+    "name": "Regular Pricing",
+    "description": "Harga reguler untuk semua outlet"
+  },
+  "created_at": "2025-01-27T15:49:47+00:00",
+  "updated_at": "2025-01-27T15:49:47+00:00"
+}

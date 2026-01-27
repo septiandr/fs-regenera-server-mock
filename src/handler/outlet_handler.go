@@ -1,11 +1,13 @@
 package handler
 
 import (
+	"encoding/json"
 	"fs-regenera/src/middleware"
 	"fs-regenera/src/model"
 	"fs-regenera/src/services"
 	"fs-regenera/src/utils"
 	"net/http"
+	"os"
 
 	"github.com/gin-gonic/gin"
 )
@@ -40,4 +42,37 @@ func GetOutletsListHandler(c *gin.Context) {
 		Total:      total,
 		TotalPages: (total + params.Limit - 1) / params.Limit,
 	})
+}
+
+func GetOutletDetailHandler(c *gin.Context) {
+	outletUUID := c.Param("outlet_uuid")
+	if outletUUID == "" {
+		utils.Fail(c, http.StatusBadRequest, "outlet_uuid is required", nil)
+		return
+	}
+
+	// Read file
+	file, err := os.ReadFile("src/data/outlets_detail.json")
+	if err != nil {
+		utils.Fail(c, http.StatusInternalServerError, "failed to read outlet data", err)
+		return
+	}
+
+	// Parse JSON
+	var outlets []map[string]interface{}
+	if err := json.Unmarshal(file, &outlets); err != nil {
+		utils.Fail(c, http.StatusInternalServerError, "failed to parse outlet data", err)
+		return
+	}
+
+	// Find outlet by uuid
+	for _, outlet := range outlets {
+		if outlet["uuid"] == outletUUID {
+			utils.Success(c, http.StatusOK, "success", outlet, nil)
+			return
+		}
+	}
+
+	// If not found
+	utils.Fail(c, http.StatusNotFound, "outlet not found", nil)
 }
