@@ -2,6 +2,7 @@ package services
 
 import (
 	"encoding/json"
+	"errors"
 	"fs-regenera/src/model"
 	"os"
 	"strings"
@@ -96,4 +97,28 @@ func GetListBookingService(query model.BookingListQuery) (
 	result = filtered[start:end]
 
 	return result, total, nil
+}
+
+func GetDetailBookingService(query model.BookingDetailQueryParams) (
+	model.Booking,
+	error,
+) {
+	file, err := os.ReadFile("src/data/booking_list.json")
+	if err != nil {
+		return model.Booking{}, err
+	}
+
+	var bookings []model.Booking
+	if err := json.Unmarshal(file, &bookings); err != nil {
+		return model.Booking{}, err
+	}
+
+	for _, b := range bookings {
+		if query.BookingUUID != "" && b.UUID == query.BookingUUID {
+			return b, nil
+		}
+
+	}
+
+	return model.Booking{}, errors.New("booking not found")
 }

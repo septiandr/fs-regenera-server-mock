@@ -28,4 +28,5 @@ func Routes(r *gin.Engine) {
 	api.POST("/bookings", handler.CreateBookingHandler)
 	api.GET("/bookings/summaries", handler.CreateBookingHandler)
 	api.GET("/bookings", handler.GetListBookingHandler)
+	api.GET("/bookings/:booking_uuid", handler.GetListBookingHandler)
 }

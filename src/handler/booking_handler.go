@@ -24,13 +24,6 @@ func CreateBookingHandler(c *gin.Context) {
 		return
 	}
 
-	// TODO: call service layer
-	// err := bookingService.Create(req)
-	// if err != nil {
-	// 	utils.Fail(c, http.StatusInternalServerError, "Failed create booking", err)
-	// 	return
-	// }
-
 	utils.Success(
 		c,
 		http.StatusOK,
@@ -91,4 +84,48 @@ func GetListBookingHandler(c *gin.Context) {
 
 	utils.Success(c, http.StatusOK, "Success get booking list", data, meta)
 
+}
+
+func GetDetailBookingHandler(c *gin.Context) {
+	var query model.BookingDetailQueryParams
+
+	if err := c.ShouldBindQuery(&query); err != nil {
+		utils.Fail(
+			c,
+			http.StatusBadRequest,
+			"Invalid query params",
+			err,
+		)
+		return
+	}
+
+	// minimal validation
+	if query.BookingUUID == "" {
+		utils.Fail(
+			c,
+			http.StatusBadRequest,
+			"uuid or code is required",
+			nil,
+		)
+		return
+	}
+
+	data, err := services.GetDetailBookingService(query)
+	if err != nil {
+		utils.Fail(
+			c,
+			http.StatusNotFound,
+			"Booking not found",
+			err,
+		)
+		return
+	}
+
+	utils.Success(
+		c,
+		http.StatusOK,
+		"Success validate data",
+		data,
+		nil,
+	)
 }

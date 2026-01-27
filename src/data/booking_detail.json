@@ -1,0 +1,21 @@
+{
+  "uuid": "4be8a17c-60c5-4496-8202-58a61790b65e",
+  "code": "BKG-93793485749",
+  "customer_name": "Asyah",
+  "legacy_no_customer": "LGTNDNBD-098S",
+  "status": "BOOKED",
+  "booking_date": "2026-02-20",
+  "booking_start": "08:00",
+  "booking_end": "09:00",
+  "timezone": "Asia/Jakarta",
+  "merchant_uuid": "29b81b2f-967d-4682-993d-a145a551665d",
+  "merchant_name": "FS Regenera",
+  "outlet_uuid": "73f5d11f-08a6-4919-8348-ec3c3c6d1c0c",
+  "outlet_name": "Natasa Solo Park",
+  "doctor_uuid": "a3e437d0-7b2a-407a-a9b4-066693a9e061",
+  "doctor_name": "dr. Budiman, Sp.BP-RE, Subsp E.L",
+  "created_by_type": "CMS",
+  "created_by_uuid": "8f21d2e4-9c5e-4f5a-b7c3-1d7e63d9c412",
+  "created_at": "2025-12-22 09:12:25.467 +0000",
+  "updated_at": "2025-12-22 09:12:25.467 +0000"
+}
