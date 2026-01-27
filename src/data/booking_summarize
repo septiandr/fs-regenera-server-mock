@@ -1,0 +1,8 @@
+{
+  "today": 10,
+  "scheduled": 25,
+  "rescheduled": 6,
+  "upcoming": 20,
+  "canceled": 9,
+  "finished": 50
+}
