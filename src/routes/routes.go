@@ -22,7 +22,7 @@ func Routes(r *gin.Engine) {
 	// ================= DOCTOR =================
 	api.GET("/doctors", handler.GetDoctorsListHandler)
 	api.GET("/doctors/:doctor_uuid/sessions", handler.GetDoctorSessions)
-	api.GET("/bookings/:doctor_uuid/booked/:date/count", handler.GetListDoctorBookedHandler)
+	api.GET("/doctors/:doctor_uuid/booked/:date/count", handler.GetListDoctorBookedHandler)
 
 	// ================= CUSTOMER =================
 	api.GET("/customers", handler.GetListCustomersHandler)
@@ -34,6 +34,6 @@ func Routes(r *gin.Engine) {
 	api.POST("/bookings", handler.CreateBookingHandler)
 	api.GET("/bookings/summaries", handler.CreateBookingHandler)
 	api.GET("/bookings", handler.GetListBookingHandler)
-	api.GET("/bookings/:booking_uuid", handler.GetListBookingHandler)
 	api.GET("/bookings/:booking_uuid/logs", handler.GetBookingListLogHandler)
+	api.GET("/bookings/:booking_uuid", handler.GetBookingByUUIDHandler)
 }

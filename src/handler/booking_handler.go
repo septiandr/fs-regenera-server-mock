@@ -172,3 +172,19 @@ func GetDetailBookingHandler(c *gin.Context) {
 		nil,
 	)
 }
+
+func GetBookingByUUIDHandler(c *gin.Context) {
+	bookingUUID := c.Param("booking_uuid")
+	if bookingUUID == "" {
+		utils.Fail(c, http.StatusBadRequest, "booking_uuid is required", nil)
+		return
+	}
+
+	data, err := services.GetBookingByUUIDService()
+	if err != nil {
+		utils.Fail(c, http.StatusInternalServerError, "Failed get booking", err)
+		return
+	}
+
+	utils.Success(c, http.StatusOK, "Success get booking", data, nil)
+}

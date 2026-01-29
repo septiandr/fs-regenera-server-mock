@@ -140,3 +140,21 @@ func GetListLogBookingService() (
 	return model.BookingListLog{}, errors.New("booking not found")
 
 }
+
+func GetBookingByUUIDService() (
+	model.BookingDetail,
+	error,
+) {
+	file, err := os.ReadFile("src/data/bookings_log.json")
+	if err != nil {
+		return model.BookingDetail{}, err
+	}
+
+	var bookings []model.Booking
+	if err := json.Unmarshal(file, &bookings); err != nil {
+		return model.BookingDetail{}, err
+	}
+
+	return model.BookingDetail{}, errors.New("booking not found")
+
+}

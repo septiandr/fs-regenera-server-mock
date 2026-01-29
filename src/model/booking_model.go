@@ -64,3 +64,30 @@ type BookingListLog struct {
 	CreatedAt    string `json:"created_at"`
 	UpdatedAt    string `json:"updated_at"`
 }
+
+type BookingDetail struct {
+	UUID             string `json:"uuid"`
+	Code             string `json:"code"`
+	CustomerName     string `json:"customer_name"`
+	LegacyNoCustomer string `json:"legacy_no_customer"`
+	Status           string `json:"status"`
+	BookingDate      string `json:"booking_date"`
+	BookingStart     string `json:"booking_start"`
+	BookingEnd       string `json:"booking_end"`
+	Timezone         string `json:"timezone"`
+
+	MerchantUUID string `json:"merchant_uuid"`
+	MerchantName string `json:"merchant_name"`
+
+	OutletUUID string `json:"outlet_uuid"`
+	OutletName string `json:"outlet_name"`
+
+	DoctorUUID string `json:"doctor_uuid"`
+	DoctorName string `json:"doctor_name"`
+
+	CreatedByType string `json:"created_by_type"`
+	CreatedByUUID string `json:"created_by_uuid"`
+
+	CreatedAt string `json:"created_at"`
+	UpdatedAt string `json:"updated_at"`
+}
