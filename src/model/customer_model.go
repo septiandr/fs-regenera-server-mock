@@ -23,6 +23,8 @@ type Customer struct {
 	UUID                   string `json:"uuid"`
 	PhoneCode              string `json:"phone_code"`
 	Phone                  string `json:"phone"`
+	Email                  string `json:"email"`
+	IdentityNumber         string `json:"identity_number"`
 	Name                   string `json:"name"`
 	LegacyNoCustomer       string `json:"legacy_no_customer"`
 	Gender                 string `json:"gender"`

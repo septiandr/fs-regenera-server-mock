@@ -3,15 +3,21 @@ package services
 import (
 	"encoding/json"
 	"fmt"
-	"fs-regenera/src/model"
 	"os"
 	"regexp"
+	"strings"
+
+	"fs-regenera/src/model"
 )
 
 var nonDigitRegex = regexp.MustCompile(`\D`)
 
 func normalizePhoneCode(v string) string {
 	return nonDigitRegex.ReplaceAllString(v, "")
+}
+
+func normalizeString(v string) string {
+	return strings.ToLower(strings.TrimSpace(v))
 }
 
 func GetListCustomersService(
@@ -22,14 +28,12 @@ func GetListCustomersService(
 	err error,
 ) {
 
-	// ⚠️ ABSOLUTE PATH (BIAR TIDAK SALAH FILE)
+	// read json file
 	file, err := os.ReadFile("src/data/customer_list.json")
 	if err != nil {
 		fmt.Println("READ FILE ERROR:", err)
 		return nil, 0, err
 	}
-
-	fmt.Println("RAW JSON SIZE:", len(file))
 
 	var customers []model.Customer
 	if err := json.Unmarshal(file, &customers); err != nil {
@@ -37,15 +41,11 @@ func GetListCustomersService(
 		return nil, 0, err
 	}
 
-	fmt.Println("TOTAL CUSTOMER RAW:", len(customers))
-
 	filtered := make([]model.Customer, 0)
 
 	for _, c := range customers {
 
-		fmt.Println("CHECK CUSTOMER:", c.Name, c.PhoneCode)
-
-		// phone code
+		// filter phone code (exact)
 		if query.PhoneCode != "" {
 			qc := normalizePhoneCode(query.PhoneCode)
 			cc := normalizePhoneCode(c.PhoneCode)
@@ -54,13 +54,42 @@ func GetListCustomersService(
 				continue
 			}
 		}
+		// filter birth date (exact)
+		if query.BirthDate != "" {
+			if c.BirthDate != query.BirthDate {
+				continue
+			}
+		}
+
+		// filter name (include / contains)
+		if query.Name != "" {
+			qn := normalizeString(query.Name)
+			cn := normalizeString(c.Name)
+
+			if !strings.Contains(cn, qn) {
+				continue
+			}
+		}
+
+		// filter legacy no customer (exact)
+		if query.LegacyNoCustomer != "" {
+			if c.LegacyNoCustomer != query.LegacyNoCustomer {
+				continue
+			}
+		}
 
 		filtered = append(filtered, c)
 	}
 
-	fmt.Println("FILTERED COUNT:", len(filtered))
-
 	total = len(filtered)
+
+	// pagination
+	if query.Page <= 0 {
+		query.Page = 1
+	}
+	if query.Limit <= 0 {
+		query.Limit = 10
+	}
 
 	start := (query.Page - 1) * query.Limit
 	end := start + query.Limit
@@ -68,6 +97,7 @@ func GetListCustomersService(
 	if start >= total {
 		return []model.Customer{}, total, nil
 	}
+
 	if end > total {
 		end = total
 	}
