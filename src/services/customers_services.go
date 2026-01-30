@@ -2,11 +2,17 @@ package services
 
 import (
 	"encoding/json"
+	"fmt"
 	"fs-regenera/src/model"
 	"os"
-	"strings"
-	"time"
+	"regexp"
 )
+
+var nonDigitRegex = regexp.MustCompile(`\D`)
+
+func normalizePhoneCode(v string) string {
+	return nonDigitRegex.ReplaceAllString(v, "")
+}
 
 func GetListCustomersService(
 	query model.CustomerCheckQuery,
@@ -16,69 +22,35 @@ func GetListCustomersService(
 	err error,
 ) {
 
-	// Read JSON file
+	// ⚠️ ABSOLUTE PATH (BIAR TIDAK SALAH FILE)
 	file, err := os.ReadFile("src/data/customer_list.json")
 	if err != nil {
+		fmt.Println("READ FILE ERROR:", err)
 		return nil, 0, err
 	}
 
+	fmt.Println("RAW JSON SIZE:", len(file))
+
 	var customers []model.Customer
 	if err := json.Unmarshal(file, &customers); err != nil {
+		fmt.Println("UNMARSHAL ERROR:", err)
 		return nil, 0, err
 	}
+
+	fmt.Println("TOTAL CUSTOMER RAW:", len(customers))
 
 	filtered := make([]model.Customer, 0)
 
 	for _, c := range customers {
 
-		// 🔍 global search (name, phone, legacy)
-		if query.Search != "" {
-			s := strings.ToLower(query.Search)
-			if !strings.Contains(strings.ToLower(c.Name), s) &&
-				!strings.Contains(c.Phone, s) &&
-				!strings.Contains(strings.ToLower(c.LegacyNoCustomer), s) {
-				continue
-			}
-		}
+		fmt.Println("CHECK CUSTOMER:", c.Name, c.PhoneCode)
 
-		// 👤 name
-		if query.Name != "" &&
-			!strings.Contains(strings.ToLower(c.Name), strings.ToLower(query.Name)) {
-			continue
-		}
+		// phone code
+		if query.PhoneCode != "" {
+			qc := normalizePhoneCode(query.PhoneCode)
+			cc := normalizePhoneCode(c.PhoneCode)
 
-		// 📞 phone code
-		if query.PhoneCode != "" && c.PhoneCode != query.PhoneCode {
-			continue
-		}
-
-		// 📱 phone
-		if query.Phone != "" && !strings.Contains(c.Phone, query.Phone) {
-			continue
-		}
-
-		// 🆔 legacy number
-		if query.LegacyNoCustomer != "" &&
-			!strings.Contains(strings.ToLower(c.LegacyNoCustomer), strings.ToLower(query.LegacyNoCustomer)) {
-			continue
-		}
-
-		// ⚧ gender
-		if query.Gender != "" && c.Gender != query.Gender {
-			continue
-		}
-
-		// 🏥 registration outlet
-		if query.RegistrationOutletUUID != "" &&
-			c.RegistrationOutletUUID != query.RegistrationOutletUUID {
-			continue
-		}
-
-		// 🎂 birth date (optional, if exists in data)
-		if query.BirthDate != "" {
-			birth, err1 := time.Parse("2006-01-02", c.BirthDate)
-			filter, err2 := time.Parse("2006-01-02", query.BirthDate)
-			if err1 == nil && err2 == nil && !birth.Equal(filter) {
+			if qc != cc {
 				continue
 			}
 		}
@@ -86,19 +58,19 @@ func GetListCustomersService(
 		filtered = append(filtered, c)
 	}
 
+	fmt.Println("FILTERED COUNT:", len(filtered))
+
 	total = len(filtered)
 
-	// Pagination
 	start := (query.Page - 1) * query.Limit
 	end := start + query.Limit
 
-	if start > total {
+	if start >= total {
 		return []model.Customer{}, total, nil
 	}
 	if end > total {
 		end = total
 	}
 
-	result = filtered[start:end]
-	return result, total, nil
+	return filtered[start:end], total, nil
 }

@@ -22,6 +22,14 @@ func GetListCustomersHandler(c *gin.Context) {
 		return
 	}
 
+	// ✅ DEFAULT VALUE (INI KUNCI)
+	if query.Page <= 0 {
+		query.Page = 1
+	}
+	if query.Limit <= 0 {
+		query.Limit = 10
+	}
+
 	data, total, err := services.GetListCustomersService(query)
 	if err != nil {
 		utils.Fail(
