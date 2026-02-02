@@ -70,6 +70,13 @@ func GetListBookingHandler(c *gin.Context) {
 		return
 	}
 
+	if query.Page == 0 {
+		query.Page = 1
+	}
+	if query.Limit == 0 {
+		query.Limit = 10
+	}
+
 	data, total, err := services.GetListBookingService(query)
 	if err != nil {
 		utils.Fail(c, http.StatusInternalServerError, "Failed get booking list", err)

@@ -18,15 +18,26 @@ type BookingSummaryResponse struct {
 	Finished    int `json:"finished"`
 }
 
+type BookingListSort string
+
+const (
+	BookingListSortBookingDate  BookingListSort = "booking_date"
+	BookingListSortCustomerName BookingListSort = "customer_name"
+	BookingListSortOutletName   BookingListSort = "outlet_name"
+	BookingListSortCreatedAt    BookingListSort = "created_at"
+)
+
 type BookingListQuery struct {
-	Page             int    `form:"page" json:"page"`
-	Limit            int    `form:"limit" json:"limit"`
-	Search           string `form:"search" json:"search"`
-	Status           string `form:"status" json:"status"`
-	BookingStartDate string `form:"booking_start_date" json:"booking_start_date"`
-	BookingEndDate   string `form:"booking_end_date" json:"booking_end_date"`
-	OutletUUID       string `form:"outlet_uuid" json:"outlet_uuid"`
-	DoctorUUID       string `form:"doctor_uuid" json:"doctor_uuid"`
+	Page             int             `form:"page" json:"page"`
+	Limit            int             `form:"limit" json:"limit"`
+	Search           string          `form:"search" json:"search"`
+	Status           string          `form:"status" json:"status"`
+	BookingStartDate string          `form:"booking_start_date" json:"booking_start_date"`
+	BookingEndDate   string          `form:"booking_end_date" json:"booking_end_date"`
+	OutletUUID       string          `form:"outlet_uuid" json:"outlet_uuid"`
+	DoctorUUID       string          `form:"doctor_uuid" json:"doctor_uuid"`
+	SortBy           BookingListSort `form:"sort_by" json:"sort_by"`
+	SortType         SortType        `form:"sort_type" json:"sort_type"`
 }
 
 type Booking struct {

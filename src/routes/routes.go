@@ -32,7 +32,7 @@ func Routes(r *gin.Engine) {
 
 	// ================= BOOKING =================
 	api.POST("/bookings", handler.CreateBookingHandler)
-	api.GET("/bookings/summaries", handler.CreateBookingHandler)
+	api.GET("/bookings/summaries", handler.GetBookingSummaryHandler)
 	api.GET("/bookings", handler.GetListBookingHandler)
 	api.GET("/bookings/:booking_uuid/logs", handler.GetBookingListLogHandler)
 	api.GET("/bookings/:booking_uuid", handler.GetBookingByUUIDHandler)

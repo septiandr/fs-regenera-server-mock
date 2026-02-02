@@ -5,6 +5,7 @@ import (
 	"errors"
 	"fs-regenera/src/model"
 	"os"
+	"sort"
 	"strings"
 	"time"
 )
@@ -78,6 +79,30 @@ func GetListBookingService(query model.BookingListQuery) (
 		}
 
 		filtered = append(filtered, b)
+	}
+
+	// 2.5 Sorting
+	if query.SortBy != "" && query.SortType != "" {
+		sort.Slice(filtered, func(i, j int) bool {
+			var less bool
+			switch query.SortBy {
+			case model.BookingListSortBookingDate:
+				less = filtered[i].BookingDate < filtered[j].BookingDate
+			case model.BookingListSortCustomerName:
+				less = filtered[i].CustomerName < filtered[j].CustomerName
+			case model.BookingListSortOutletName:
+				less = filtered[i].OutletName < filtered[j].OutletName
+			case model.BookingListSortCreatedAt:
+				less = filtered[i].CreatedAt < filtered[j].CreatedAt
+			default:
+				less = true
+			}
+
+			if query.SortType == model.SortDESC {
+				return !less
+			}
+			return less
+		})
 	}
 
 	total = len(filtered)
